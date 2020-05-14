@@ -21,7 +21,7 @@
             @foreach($posts as $post)
                 <tr>
                     <td>{{$post->id}}</td>
-                    <td>{{$post->user->name}}</td>
+                    <td><a href="{{route('admin.posts.edit', $post->id)}}">{{$post->user->name}}</a></td>
                     <td>{{$post->category ? $post->category->name : "No Category"}}</td>
                     <td>
                         @if($post->photo)
@@ -31,7 +31,7 @@
                         @endif
                     </td>
                     <td>{{$post->title}}</td>
-                    <td>{{$post->body}}</td>
+                    <td>{{str_limit($post->body, 30)}}</td>
                     <td>{{$post->created_at->diffForhumans()}}</td>
                     <td>{{$post->updated_at->diffForhumans()}}</td>
                 </tr>
