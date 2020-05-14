@@ -22,7 +22,7 @@
                 <tr>
                     <td>{{$post->id}}</td>
                     <td>{{$post->user->name}}</td>
-                    <td>{{$post->category_id}}</td>
+                    <td>{{$post->category ? $post->category->name : "No Category"}}</td>
                     <td>
                         @if($post->photo)
                             <img height="50" src="{{$post->photo->getProfilePic($post->photo->file)}}">
