@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Photo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class AdminCategoriesController extends Controller
+class AdminMediaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +16,9 @@ class AdminCategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $media = Photo::all();
 
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.media.index', compact('media'));
     }
 
     /**
@@ -28,7 +28,7 @@ class AdminCategoriesController extends Controller
      */
     public function create()
     {
-
+        return view('admin.media.create');
     }
 
     /**
@@ -39,9 +39,14 @@ class AdminCategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        Category::create($request->all());
+        $file = $request->file('file');
 
-        return redirect('admin/categories');
+        $name = time() . $file->getClientOriginalName();
+
+        $file->move('images', $name);
+
+        Photo::create(['file' =>$name]);
+
     }
 
     /**
@@ -63,22 +68,19 @@ class AdminCategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::findOrFail($id);
-
-        return view('admin.categories.edit', compact('category'));
+        //
     }
 
     /**
      * Update the specified resource in storage.
+     *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        Category::findOrFail($id)->update($request->all());
-
-        return redirect('admin/categories');
+        //
     }
 
     /**
@@ -89,8 +91,12 @@ class AdminCategoriesController extends Controller
      */
     public function destroy($id)
     {
-        Category::findOrFail($id)->delete();
+        $photo = Photo::findOrFail($id);
 
-        return redirect('admin/categories');
+        unlink(public_path().'\images\\'. $photo->file);
+
+        $photo->delete();
+
+        return redirect('admin/media');
     }
 }
