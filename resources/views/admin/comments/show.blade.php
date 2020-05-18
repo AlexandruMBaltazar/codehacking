@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <h1>Comments</h1>
+    <h1>Comments For This Post</h1>
 
     <table class="table">
         <thead>
@@ -26,12 +26,13 @@
                         @if($comment->is_active == 1)
                             {!! Form::open(['method' => 'PATCH', 'action' => ['PostCommentsController@update', $comment->id] ]) !!}
                             {{csrf_field()}}
-                                <input type="hidden" name="is_active" value="0">
+                            <input type="hidden" name="is_active" value="0">
 
-                                <div class="form-group">
-                                    {!! Form::submit('Un-approve', ['class'=>'btn btn-info']) !!}
-                                </div>
+                            <div class="form-group">
+                                {!! Form::submit('Un-approve', ['class'=>'btn btn-info']) !!}
+                            </div>
                             {!! Form::close() !!}
+
                         @else
                             {!! Form::open(['method' => 'PATCH', 'action' => ['PostCommentsController@update', $comment->id] ]) !!}
                             {{csrf_field()}}
@@ -51,7 +52,7 @@
                         <div class="form-group">
                             {!! Form::submit('Delete', ['class'=>'btn btn-danger']) !!}
                         </div>
-                        {!! Form::close() !!}
+                    {!! Form::close() !!}
                 </tr>
             @endforeach
         @endif

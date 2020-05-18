@@ -12,6 +12,8 @@
             <th>Photo</th>
             <th>Title</th>
             <th>Body</th>
+            <th>Live Post</th>
+            <th>View Comments</th>
             <th>Created</th>
             <th>Updated</th>
         </tr>
@@ -32,6 +34,8 @@
                     </td>
                     <td>{{$post->title}}</td>
                     <td>{{str_limit($post->body, 30)}}</td>
+                    <td><a class="btn btn-info" href="{{route('home.post', $post->id)}}">View Post</a></td>
+                    <td><a class="btn btn-info" href="{{route('admin.comments.show', $post->id)}}">View Comments</a></td>
                     <td>{{$post->created_at->diffForhumans()}}</td>
                     <td>{{$post->updated_at->diffForhumans()}}</td>
                 </tr>
