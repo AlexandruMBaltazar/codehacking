@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="3c1ba3d4-6943-427d-b01a-8599c63b30f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoriesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminPostsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/1589470126php-illustration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/1589470145javascript-illustration.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/1589472265php-illustration.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/admin.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -167,7 +165,9 @@
       <workItem from="1589372049743" duration="8273000" />
       <workItem from="1589462687822" duration="11889000" />
       <workItem from="1589539246024" duration="6371000" />
-      <workItem from="1589556711801" duration="336000" />
+      <workItem from="1589556711801" duration="4230000" />
+      <workItem from="1589649525146" duration="5321000" />
+      <workItem from="1589802017340" duration="427000" />
     </task>
     <servers />
   </component>

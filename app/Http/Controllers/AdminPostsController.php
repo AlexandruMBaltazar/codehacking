@@ -11,6 +11,10 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class AdminPostsController
+ * @package App\Http\Controllers
+ */
 class AdminPostsController extends Controller
 {
     /**
@@ -132,4 +136,25 @@ class AdminPostsController extends Controller
 
         return redirect('admin/posts');
     }
+
+
+    /**
+     * Display the specified post
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function post($id){
+
+        $post = Post::findOrFail($id);
+
+        return view('post', compact('post')) ;
+    }
+
+
+
+
+
+
+
 }
